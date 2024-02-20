@@ -100,3 +100,42 @@
     margin-block-end: 15px;
     padding: 10px;
   }
+
+  .welcome {
+    padding: 35px 75px;
+    background-color: white;
+    border-radius: 8px;
+    text-align: center;
+  
+    h2 {
+      font-weight: bold;
+      color: orangered;
+      font-size: 25px;
+    }
+  
+    h3 {
+      font-weight: normal;
+      color: #2f2f2f;
+    }
+  
+    .buttons {
+      display: flex;
+      gap: 25px;
+      justify-content: center;
+      margin-block-start: 15px;
+  
+      button {
+        background-color: orange;
+        border: none;
+        cursor: pointer;
+        color: white;
+        padding: 5px 20px;
+        border-radius: 3px;
+        transition-duration: 0.3s;
+      }
+  
+      button:hover {
+        background-color: #4235d6;
+      }
+    }
+  } 
