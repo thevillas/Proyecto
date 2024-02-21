@@ -6,7 +6,7 @@ import styles from "./Styles.module.css";
 
 const Register = () => {
   const [inputs, setInputs] = useState({
-    email: "",
+    correo: "",
     nombre: "",
     contraseña: "",
   });
@@ -15,7 +15,7 @@ const Register = () => {
 
   const navigate = useNavigate();
 
-  const { nombre, contraseña, email } = inputs;
+  const { nombre, contraseña, correo } = inputs;
 
   const HandleChange = (e) => {
     setInputs({ ...inputs, [e.target.name]: e.target.value });
@@ -23,10 +23,10 @@ const Register = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    if (nombre !== "" && contraseña !== "" && email !== "") {
+    if (nombre !== "" && contraseña !== "" && correo !== "") {
       const Usuario = {
         nombre,
-        email,
+        correo,
         contraseña,
       };
       setLoading(true);
@@ -35,7 +35,7 @@ const Register = () => {
         .then((res) => {
           const { data } = res;
           setMensaje(data.mensaje);
-          setInputs({ nombre: "", contraseña: "", email: "" });
+          setInputs({ nombre: "", contraseña: "", correo: "" });
           setTimeout(() => {
             setMensaje("");
             navigate("/login");
@@ -77,14 +77,14 @@ const Register = () => {
 
           <div className={styles.inputContainer}>
             <div className={styles.left}>
-              <label htmlFor="email">Email</label>
+              <label htmlFor="correo">correo</label>
               <input
                 onChange={(e) => HandleChange(e)}
-                value={email}
-                name="email"
-                id="email"
-                type="email"
-                placeholder="Email..."
+                value={correo}
+                name="correo"
+                id="correo"
+                type="correo"
+                placeholder="correo..."
                 autoComplete="off"
               />
             </div>

@@ -2,16 +2,16 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import styles from "./Styles.module.css";
+import styles from "./Styles.module.css"; 
 
 const Login = () => {
-  const [inputs, setInputs] = useState({ email: "", contraseña: "" });
+  const [inputs, setInputs] = useState({ correo: "", contraseña: "" });
   const [mensaje, setMensaje] = useState();
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
-  const { email, contraseña } = inputs;
+  const { correo, contraseña } = inputs;
 
   const HandleChange = (e) => {
     setInputs({ ...inputs, [e.target.name]: e.target.value });
@@ -19,9 +19,9 @@ const Login = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    if (email !== "" && contraseña !== "") {
+    if (correo !== "" && contraseña !== "") {
       const Usuario = {
-        email,
+        correo,
         contraseña,
       };
       setLoading(true);
@@ -32,21 +32,22 @@ const Login = () => {
           setMensaje(data.mensaje);
           setTimeout(() => {
             setMensaje("");
-            setLoading(false);
-            navigate(`/welcome/${data?.usuario.id}`);
+            localStorage.setItem("token", data?.usuario.token);
+            navigate(`/welcome/:id`);
           }, 1500);
         })
         .catch((error) => {
           console.error(error);
-          setMensaje("Su Email u contraseña incorrecta");
+          setMensaje("Correo u contraseña incorrecta");
           setTimeout(() => {
             setMensaje("");
           }, 1500);
         });
-      setInputs({ email: "", contraseña: "" });
+      setInputs({ correo: "", contraseña: "" });
       setLoading(false);
     }
   };
+
 
   return (
     <>
@@ -59,11 +60,11 @@ const Login = () => {
               <label htmlFor="email">Email</label>
               <input
                 onChange={(e) => HandleChange(e)}
-                value={email}
-                name="email"
-                id="email"
+                value={correo}
+                name="correo"
+                id="correo"
                 type="email"
-                placeholder="Email..."
+                placeholder="correo..."
                 autoComplete="off"
               />
             </div>
@@ -83,7 +84,7 @@ const Login = () => {
                 autoComplete="off"
               />
             </div>
-           
+          
           </div>
           <button type="submit">
             {loading ? "Cargando..." : "Iniciar Sesión"}

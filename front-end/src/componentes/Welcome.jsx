@@ -1,8 +1,8 @@
+import styles from "./Styles.module.css";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import styles from "./Styles.module.css";
 
 const Welcome = () => {
   const [name, setName] = useState();
@@ -25,7 +25,7 @@ const Welcome = () => {
   }, [token]);
 
   return (
-    <div className={styles.welcome}> Welcome
+    <div className={styles.welcome}>
       <h3>{name ? `¡Felicitaciones ${name}!` : "¿Que estas haciendo? 🕵️‍♂️"}</h3>
       <h2>
         {name ? "Te pudiste logear correctamente🎉" : "Te estamos viendo..."}
