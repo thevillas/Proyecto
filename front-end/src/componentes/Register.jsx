@@ -9,13 +9,14 @@ const Register = () => {
     correo: "",
     nombre: "",
     contraseña: "",
+    celular: "",
   });
   const [mensaje, setMensaje] = useState();
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
-  const { nombre, contraseña, correo } = inputs;
+  const { nombre, contraseña, correo , celular } = inputs;
 
   const HandleChange = (e) => {
     setInputs({ ...inputs, [e.target.name]: e.target.value });
@@ -23,11 +24,12 @@ const Register = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    if (nombre !== "" && contraseña !== "" && correo !== "") {
+    if (nombre !== "" && contraseña !== "" && correo !== "" && celular !== "" ) {
       const Usuario = {
         nombre,
         correo,
         contraseña,
+        celular,
       };
       setLoading(true);
       await axios
@@ -35,7 +37,7 @@ const Register = () => {
         .then((res) => {
           const { data } = res;
           setMensaje(data.mensaje);
-          setInputs({ nombre: "", contraseña: "", correo: "" });
+          setInputs({ nombre: "", contraseña: "", correo: "" , celular: "" });
           setTimeout(() => {
             setMensaje("");
             navigate("/login");
@@ -52,6 +54,7 @@ const Register = () => {
       setLoading(false);
     }
   };
+
 
   return (
     <>
@@ -77,7 +80,7 @@ const Register = () => {
 
           <div className={styles.inputContainer}>
             <div className={styles.left}>
-              <label htmlFor="correo">correo</label>
+              <label htmlFor="email">Email</label>
               <input
                 onChange={(e) => HandleChange(e)}
                 value={correo}
@@ -101,6 +104,21 @@ const Register = () => {
                 id="contraseña"
                 type="password"
                 placeholder="Contraseña..."
+                autoComplete="off"
+              />
+            </div>
+          </div>
+
+          <div className={styles.inputContainer}>
+            <div className={styles.left}>
+              <label htmlFor="celular">Celular</label>
+              <input
+                onChange={(e) => HandleChange(e)}
+                value={celular}
+                name="celular"
+                id="celular"
+                type="text"
+                placeholder="Celular..."
                 autoComplete="off"
               />
             </div>

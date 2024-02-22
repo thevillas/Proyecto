@@ -1,7 +1,7 @@
 *{
     padding: 0%;
     margin: 0%;
-    font-family: Protest-Revolution;
+    font-family: 'Kanit:ital';
     box-sizing: border-box;
     outline: none;
 }
@@ -11,9 +11,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: aquamarine;
+    background: #0099F7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F11712, #0099F7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F11712, #0099F7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
+
 }
 *::selection{
-    background: rgb(206, 149, 43);
-    color: aliceblue;
+    background: rgb(250, 199, 103);
+    color: rgb(70, 145, 211);
 }

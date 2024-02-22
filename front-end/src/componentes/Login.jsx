@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import styles from "./Styles.module.css"; 
+import styles from "./Styles.module.css";
 
 const Login = () => {
   const [inputs, setInputs] = useState({ correo: "", contraseña: "" });
@@ -32,13 +32,13 @@ const Login = () => {
           setMensaje(data.mensaje);
           setTimeout(() => {
             setMensaje("");
-            localStorage.setItem("token", data?.usuario.token);
+            setLoading(false);
             navigate(`/welcome/:id`);
           }, 1500);
         })
         .catch((error) => {
           console.error(error);
-          setMensaje("Correo u contraseña incorrecta");
+          setMensaje("Su correo u contraseña incorrecta");
           setTimeout(() => {
             setMensaje("");
           }, 1500);
@@ -48,7 +48,6 @@ const Login = () => {
     }
   };
 
-
   return (
     <>
       <div className={styles.formContainer}>
@@ -57,13 +56,13 @@ const Login = () => {
         <form onSubmit={(e) => onSubmit(e)}>
           <div className={styles.inputContainer}>
             <div className={styles.left}>
-              <label htmlFor="email">Email</label>
+              <label htmlFor="correo">correo</label>
               <input
                 onChange={(e) => HandleChange(e)}
                 value={correo}
                 name="correo"
                 id="correo"
-                type="email"
+                type="correo"
                 placeholder="correo..."
                 autoComplete="off"
               />
