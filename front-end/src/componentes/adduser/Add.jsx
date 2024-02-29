@@ -23,10 +23,11 @@ const Add = () => {
 
   const submitForm = async(e) =>{
     e.preventDefault();
+    console.log(user)
     await axios.post("http://localhost:4000/api/create", user)
     .then((response)=>{
        toast.success(response.data.msg, {position:"top-right"})
-       navigate("/")
+       navigate("/user")
     })
     .catch(error => console.log(error))
   }
@@ -39,7 +40,7 @@ const Add = () => {
         <form className='addUserForm' onSubmit={submitForm}>
             <div className="inputGroup">
                 <label htmlFor="fname">First name</label>
-                <input type="text" onChange={inputHandler} id="fname" name="fname" autoComplete='off' placeholder='First name' />
+                <input type="text" onChange={inputHandler} id="fname" name="nombre" autoComplete='off' placeholder='First name' />
             </div>
             <div className="inputGroup">
                 <label htmlFor="celular">celular</label>
@@ -47,11 +48,11 @@ const Add = () => {
             </div>
             <div className="inputGroup">
                 <label htmlFor="email">Email</label>
-                <input type="email" onChange={inputHandler} id="email" name="email" autoComplete='off' placeholder='Email' />
+                <input type="email" onChange={inputHandler} id="email" name="correo" autoComplete='off' placeholder='Email' />
             </div>
             <div className="inputGroup">
                 <label htmlFor="password">Password</label>
-                <input type="password" onChange={inputHandler} id="password" name="password" autoComplete='off' placeholder='password' />
+                <input type="password" onChange={inputHandler} id="password" name="contraseña" autoComplete='off' placeholder='password' />
             </div>
             <div className="inputGroup">
                 <button type="submit">ADD USER</button>

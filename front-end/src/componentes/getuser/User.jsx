@@ -49,9 +49,9 @@ const User = () => {
                         return(
                         <tr key={user._id}>
                             <td>{index + 1}</td>
-                            <td>{user.fname}</td>
+                            <td>{user.nombre}</td>
                             <td>{user.celular}</td>
-                            <td>{user.email}</td>
+                            <td>{user.correo}</td>
                             <td className='actionButtons'>
                                 <button onClick={()=> deleteUser(user._id)}><i className="fa-solid fa-trash"></i></button>
                                 <Link to={`/edit/`+user._id}><i className="fa-solid fa-pen-to-square"></i></Link>

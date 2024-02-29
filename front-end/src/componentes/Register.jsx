@@ -48,6 +48,7 @@ const Register = () => {
           setMensaje("Hubo un error");
           setTimeout(() => {
             setMensaje("");
+            navigate("/");
           }, 1500);
         });
 
