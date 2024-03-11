@@ -1,13 +1,18 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-import styles from "./Styles.module.css";
+import estilos from '../css/App.module.css';
+import styles from "../css/Styles.module.css";
 
 const Register = () => {
   const [inputs, setInputs] = useState({
+
     correo: "",
     nombre: "",
+
+    email: "",
+    nombre: "", 
+
     contraseña: "",
     celular: "",
   });
@@ -16,7 +21,11 @@ const Register = () => {
 
   const navigate = useNavigate();
 
+
   const { nombre, contraseña, correo , celular } = inputs;
+
+
+
 
   const HandleChange = (e) => {
     setInputs({ ...inputs, [e.target.name]: e.target.value });
@@ -24,7 +33,11 @@ const Register = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+
     if (nombre !== "" && contraseña !== "" && correo !== "" && celular !== "" ) {
+
+  
+
       const Usuario = {
         nombre,
         correo,
@@ -37,7 +50,11 @@ const Register = () => {
         .then((res) => {
           const { data } = res;
           setMensaje(data.mensaje);
+
           setInputs({ nombre: "", contraseña: "", correo: "" , celular: "" });
+
+          setInputs({ nombre: "", contraseña: "", email: "", celular: "" });
+
           setTimeout(() => {
             setMensaje("");
             navigate("/login");
@@ -58,6 +75,7 @@ const Register = () => {
 
   return (
     <>
+    <div className={estilos.register}>
       <div className={styles.formContainer}>
         <h3>Bienvenido a la pagina</h3>
         <h2>De Registro!</h2>
@@ -87,7 +105,7 @@ const Register = () => {
                 name="correo"
                 id="correo"
                 type="correo"
-                placeholder="correo..."
+                placeholder="Correo..."
                 autoComplete="off"
               />
             </div>
@@ -117,7 +135,11 @@ const Register = () => {
                 value={celular}
                 name="celular"
                 id="celular"
+
                 type="text"
+
+                
+
                 placeholder="Celular..."
                 autoComplete="off"
               />
@@ -135,8 +157,9 @@ const Register = () => {
         </form>
       </div>
       {mensaje && <div className={styles.toast}>{mensaje}</div>}
+      </div>
     </>
   );
 };
 
-export default Register;
+export default Register

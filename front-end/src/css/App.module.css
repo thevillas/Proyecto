@@ -1,0 +1,28 @@
+body {
+    inline-size: 100%;
+    block-size: 100%;
+    margin: 0;
+    outline: none;
+
+    .container {                                                                                            
+        display: flex;
+        justify-content: center;
+        background-color: #0099F7;
+        /* fallback for old browsers */
+        background: linear-gradient(to right, #F11712, #0099F7);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+}
+
+.NavBar {
+    background-color: white;
+}
+
+
+
+
+
+*::selection {
+    background: #0099F7;
+    color: #F11712;
+}

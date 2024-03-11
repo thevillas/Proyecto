@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-
-import styles from "./Styles.module.css";
+import { useNavigate } from "react-router-dom"; 
+import estilos from '../css/App.module.css';
+import styles from "../css/Styles.module.css";
 
 const Login = () => {
   const [inputs, setInputs] = useState({ correo: "", contraseña: "" });
@@ -33,7 +33,11 @@ const Login = () => {
           setTimeout(() => {
             setMensaje("");
             setLoading(false);
-            navigate(`/welcome/:id`);
+
+            navigate(`/home/:id`);
+
+            navigate(`/home/${data?.usuario.id}`);
+
           }, 1500);
         })
         .catch((error) => {
@@ -50,13 +54,14 @@ const Login = () => {
 
   return (
     <>
+    <div className={estilos.login}>
       <div className={styles.formContainer}>
         <h3>Bienvenido a la pagina</h3>
         <h2>De Inicio de Sesión!</h2>
         <form onSubmit={(e) => onSubmit(e)}>
           <div className={styles.inputContainer}>
             <div className={styles.left}>
-              <label htmlFor="correo">correo</label>
+              <label htmlFor="correo">Correo</label>
               <input
                 onChange={(e) => HandleChange(e)}
                 value={correo}
@@ -90,12 +95,13 @@ const Login = () => {
           </button>
           <p>
             Aún no tienes cuenta?{" "}
-            <b onClick={() => navigate("/")}>Registrate</b>
+            <b onClick={() => navigate("/register")}>Registrate</b>
           </p>
         </form>
       </div>
 
       {mensaje && <div className={styles.toast}>{mensaje}</div>}
+      </div>
     </>
   );
 };
