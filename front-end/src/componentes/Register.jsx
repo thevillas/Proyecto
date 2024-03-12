@@ -11,7 +11,7 @@ const Register = () => {
     nombre: "",
 
     email: "",
-    nombre: "", 
+    
 
     contraseña: "",
     celular: "",
