@@ -1,0 +1,938 @@
+/*----------------------------------------el login y register*/
+.formContainer {
+    margin: 5vw;
+    padding: 2vw;
+    background-color: white;
+    border-radius: 2vw;
+    inline-size: 40vw;
+    block-size: 55vw;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    h3 {
+        margin-block-end: 0;
+        font-size: 2vw;
+        font-weight: normal;
+        color: black;
+    }
+
+    h2 {
+        margin-block-start: 0;
+        font-size: 3vw;
+        font-weight: bolder;
+        color: #ff6961;
+    }
+
+    form {
+        margin-block-start: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2vw;
+
+        .inputContainer {
+            display: flex;
+            block-size: 3vw;
+            justify-content: space-between;
+            align-items: center;
+            background-color: whitesmoke;
+            padding: 1vw 1.5vw;
+            border-radius: 1vw;
+            color: black;
+            border: .3vw solid #84b6f4;
+        }
+
+        .left {
+            display: flex;
+            flex-direction: column;
+            gap: 1vw;
+            inline-size: 80%;
+
+            label {
+                font-size: 1.5vw;
+            }
+
+            input {
+                border: none;
+                font-weight: bold;
+                background-color: inherit;
+                font-size: 1.5vw;
+                color: black;
+            }
+        }
+
+        button {
+            margin-block-start: 1vw;
+            border: none;
+            inline-size: 100%;
+            block-size: 5vw;
+            padding: 1vw 1vw;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 2vw;
+            color: white;
+            background-color: #ff6961;
+            border-radius: 2vw;
+            transition-duration: .3s;
+        }
+
+        button:hover {
+            background-color: #812823;
+        }
+
+        p {
+            text-align: center;
+            margin: 3vw 2vw auto 2vw;
+            font-size: 2vw;
+
+            b {
+                cursor: pointer;
+                color: #ff6961;
+            }
+
+            b:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+/*----------------------------------------la carta informativa*/
+.toast {
+    transition-duration: 0.3s;
+    background-color: #6358dc75;
+    border-radius: 3vw;
+    inline-size: 30%;
+    text-align: center;
+    position: absolute;
+    inset-block-end: 0;
+    margin-block-end: 7vw;
+    padding: 5vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/*----------------------------------------el navbar*/
+.navbar {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    position: fixed;
+    inline-size: 100%;
+    block-size: 8vw;
+    inset-block-start: -.5vw;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-block-end: .3vw solid;
+    border-image: linear-gradient(to right, #84b6f4, #ff6961) 1;
+
+    img {
+        margin-inline-start: 2vw;
+        inline-size: 7vw;
+        block-size: 6vw;
+    }
+
+    .list {
+        display: flex;
+
+        a {
+            margin: 16vw 0;
+            text-decoration: none;
+            font-size: 1.5vw;
+            color: black;
+            margin: 0 3vw 5vw 1vw;
+        }
+
+        ul {
+            display: flex;
+            padding: 5vw;
+            list-style: none;
+        }
+    }
+
+    a:hover {
+        color: #ffbf00;
+    }
+
+    .list2 {
+        display: flex;
+
+        a {
+            gap: 0;
+            padding: 0;
+            text-decoration: none;
+            font-size: 1.5vw;
+            color: #84b6f4;
+            margin: 0 3vw 5vw 0;
+        }
+
+        ul {
+            display: flex;
+            padding: 1vw;
+            list-style: none;
+        }
+
+        a:hover {
+            color: #ff6961;
+        }
+    }
+}
+
+/*----------------------------------------el home*/
+.home {
+    background-image: url(../images/imagen.png);
+    opacity: 97%;
+    inline-size: 100%;
+    block-size: 50vw;
+    display: inline-block;
+
+    .superpuesto {
+        margin-block-start: 5vw;
+        text-align: start;
+        inline-size: 47%;
+        float: inline-start;
+        block-size: 44vw;
+        inset-inline-end: 0;
+        font-size: 1.4vw;
+        background-color: rgba(69, 46, 46, .3);
+        padding: .5vw;
+    }
+
+    h1 {
+        font-size: 3vw;
+        margin-inline-end: 2vw;
+        margin-inline-start: 1vw;
+        margin-block-start: 5vw;
+        color: white;
+    }
+
+    p {
+        margin-inline-end: 2vw;
+        margin-inline-start: 1vw;
+        color: white;
+    }
+}
+
+.carrusel_home {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0 9vw 0 6vw;
+    overflow: hidden;
+
+    h2 {
+        font-size: 5vw;
+        text-align: center;
+        margin: 3vw .5vw;
+    }
+
+    ul {
+        margin: 0;
+        display: flex;
+        padding: 0;
+        inline-size: 400%;
+    }
+
+    li {
+        list-style: none;
+        inline-size: 100%;
+    }
+
+    img {
+        inline-size: 1170vw;
+        block-size: 55vw;
+        inline-size: 100%;
+        animation: slide 10s infinite alternate ease-in-out;
+        border-radius: 10px;
+    }
+}
+
+@keyframes slide {
+    0% {
+        margin-inline-start: 0;
+    }
+
+    20% {
+        margin-inline-start: 0;
+    }
+
+    25% {
+        margin-inline-start: -100%;
+    }
+
+    45% {
+        margin-inline-start: -100%;
+    }
+
+    50% {
+        margin-inline-start: -200%;
+    }
+
+    70% {
+        margin-inline-start: -200%;
+    }
+
+    75% {
+        margin-inline-start: -300%;
+    }
+
+    100% {
+        margin-inline-start: -300%;
+    }
+}
+
+/*----------------------------------------la galeria*/
+.carrusel {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0 9vw 0 6vw;
+    overflow: hidden;
+
+
+    h2 {
+        font-size: 5vw;
+        text-align: center;
+        color: #ff6961;
+        margin: 9vw 0 7vw;
+    }
+
+
+    ul {
+        margin: 0;
+        display: flex;
+        padding: 0;
+        inline-size: 400%;
+    }
+
+    li {
+        list-style: none;
+        inline-size: 100%;
+    }
+
+    img {
+        inline-size: 1170vw;
+        block-size: 55vw;
+        inline-size: 100%;
+        animation: slide 10s infinite alternate ease-in-out;
+        border-radius: 10px;
+    }
+}
+
+@keyframes slide {
+    0% {
+        margin-inline-start: 0;
+    }
+
+    20% {
+        margin-inline-start: 0;
+    }
+
+    25% {
+        margin-inline-start: -100%;
+    }
+
+    45% {
+        margin-inline-start: -100%;
+    }
+
+    50% {
+        margin-inline-start: -200%;
+    }
+
+    70% {
+        margin-inline-start: -200%;
+    }
+
+    75% {
+        margin-inline-start: -300%;
+    }
+
+    100% {
+        margin-inline-start: -300%;
+    }
+}
+
+/*----------------------------------------los servicios*/
+.servece {
+    margin: 10vw .5vw 5vw 1vw;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    h1 {
+        margin: 0;
+        font-size: 5vw;
+        inline-size: 100%;
+    }
+
+    p {
+        padding-block-end: 4vw;
+        font-size: 2vw;
+        border-block-end: .3vw solid;
+        border-image: linear-gradient(to right, #84b6f4, #ff6961) 1;
+    }
+}
+
+.izquierda {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    margin-block-end: 0;
+    inline-size: 100%;
+    block-size: 25vw;
+    justify-content: space-between;
+    align-items: center;
+    margin-block-start: 0;
+
+    .cortepelo {
+        block-size: 20vw;
+        text-align: center;
+        inline-size: 50%;
+        color: black;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        border-inline-end: .3vw solid #ff6961;
+
+        h3 {
+            margin-block-start: 0;
+            font-size: 3vw;
+            margin-inline-start: 2vw;
+        }
+
+        p {
+            font-size: 2vw;
+            margin-inline-end: 70vw;
+            margin-inline-start: 5vw;
+            inline-size: 40vw;
+        }
+
+        img {
+            inline-size: 30vw;
+            block-size: 20vw;
+            margin-inline-start: 3vw;
+        }
+    }
+
+    .cortebarbaypelo {
+        margin-block-start: 35vw;
+        block-size: 20vw;
+        text-align: center;
+        inline-size: 50%;
+        color: black;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        border-inline-end: .3vw solid #ff6961;
+
+        h3 {
+            margin-block-start: -20vw;
+            font-size: 3vw;
+            margin-inline-start: 2vw;
+        }
+
+        p {
+            font-size: 2vw;
+            margin-inline-end: 70vw;
+            margin-inline-start: 5vw;
+            inline-size: 40vw;
+        }
+
+        img {
+            inline-size: 30vw;
+            block-size: 20vw;
+            margin-inline-start: 3vw;
+        }
+    }
+}
+
+.derecha {
+    margin-inline-end: 10vw;
+    margin-block-start: 9vw;
+    margin-block-end: 20vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    block-size: 25vw;
+    justify-content: space-between;
+    align-items: center;
+
+
+
+    .cortebarba {
+        text-align: center;
+        inline-size: 10%;
+        margin-block-start: 9vw;
+        color: black;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        h3 {
+            margin-inline-start: 80vw;
+            font-size: 3vw;
+        }
+
+        p {
+            font-size: 2vw;
+            inline-size: 40vw;
+            margin-inline-end: 70vw;
+            margin-inline-start: 60vw;
+        }
+
+        img {
+            inline-size: 30vw;
+            block-size: 20vw;
+            margin-inline-start: 65vw;
+        }
+    }
+
+    .cortenormal {
+        margin-block-start: 35vw;
+        text-align: center;
+        inline-size: 10%;
+        color: black;
+        margin-block-end: 20vw;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        h3 {
+            margin-block-start: -30vw;
+            margin-inline-start: 80vw;
+            font-size: 3vw;
+        }
+
+        p {
+            font-size: 2vw;
+            inline-size: 40vw;
+            margin-inline-end: 70vw;
+            margin-inline-start: 60vw;
+        }
+
+        img {
+            inline-size: 30vw;
+            block-size: 20vw;
+            margin-inline-start: 65vw;
+        }
+    }
+}
+
+/*----------------------------------------las reservas*/
+.reserva {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    h1 {
+        color: #ff6961;
+        margin: 10vw 0 3vw 2vw;
+        font-size: 5vw;
+    }
+}
+
+.prefieres {
+    display: flex;
+
+    img {
+        inline-size: 50vw;
+        block-size: 30vw;
+        margin-inline-start: 2vw;
+        border-radius: 2vw;
+    }
+
+    .inputs {
+        inline-size: 10vw;
+        block-size: 2vw;
+        margin-inline-start: 5vw;
+        font-size: 5vw;
+
+        input{
+            padding: .1vw;
+
+            #cajon2 {
+                margin: 10vw;
+                border: 30vw solid black;
+            }
+        }
+
+            #cajon1 {
+                padding: 10vw;
+                margin: 2vw 2vw 2vw 2vw;
+            }
+
+            
+
+            #cajon3 {}
+    }
+
+    button {
+        block-size: 5vw;
+        margin-inline-start: 8vw;
+        margin-inline-end: 2vw;
+        margin-block-start: 5vw;
+        font-size: 3vw;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: #84b6f4;
+        background-color: white;
+        padding: .5vw;
+        border-radius: 1vw;
+        border-color: #ff6961;
+    }
+
+}
+
+/*----------------------------------------el nosotros*/
+.barra {
+    background-image: url(../images/imagen.png);
+    opacity: 97%;
+    inline-size: 100%;
+    block-size: 50vw;
+    display: inline-block;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    .superpuesto {
+        margin-block-start: 5vw;
+        text-align: start;
+        inline-size: 47%;
+        float: inline-end;
+        block-size: 44vw;
+        inset-inline-end: 0;
+        font-size: 1.4vw;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: .5vw;
+    }
+
+    h1 {
+        font-size: 3vw;
+        margin-inline-end: 2vw;
+        margin-inline-start: 1vw;
+        margin-block-start: 5vw;
+        color: white;
+    }
+
+    p {
+        margin-inline-end: 2vw;
+        margin-inline-start: 1vw;
+        color: white;
+    }
+}
+
+/*----------------------------------------los productos*/
+.icono {
+    margin-block-start: 2vw;
+    inline-size: 5vw;
+    float: inline-end;
+
+    a {
+        font-size: 3vw;
+        color: #ffbf00;
+    }
+}
+
+.product{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    h2{
+        font-size: 5vw;
+        text-align: center;
+        color: #ff6961;
+        margin: 0 0 1vw 0;
+    }
+}
+
+.recomendados_productos {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 8vw 5vw 0 6vw;
+    overflow: hidden;
+
+    h2 {
+        font-size: 5vw;
+        text-align: center;
+        color: #ff6961;
+        margin: 0 0 1vw 0;
+    }
+
+
+    ul {
+        margin: 0;
+        display: flex;
+        padding: 0;
+        inline-size: 400%;
+    }
+
+    li {
+        list-style: none;
+        inline-size: 100%;
+    }
+
+    img {
+        inline-size: 170vw;
+        block-size: 35vw;
+        inline-size: 100%;
+        animation: slide 10s infinite alternate ease-in-out;
+        border-radius: 3vw;
+    }
+}
+
+@keyframes slide {
+    0% {
+        margin-inline-start: 0;
+    }
+
+    20% {
+        margin-inline-start: 0;
+    }
+
+    25% {
+        margin-inline-start: -100%;
+    }
+
+    45% {
+        margin-inline-start: -100%;
+    }
+
+    50% {
+        margin-inline-start: -200%;
+    }
+
+    70% {
+        margin-inline-start: -200%;
+    }
+
+    75% {
+        margin-inline-start: -300%;
+    }
+
+    100% {
+        margin-inline-start: -300%;
+    }
+}
+
+/*----------------------------------------el header*/
+.icon_cart {
+    inline-size: 40px;
+    block-size: 40px;
+    stroke: #000;
+}
+
+.icon_cart:hover {
+    cursor: pointer;
+}
+
+img {
+    max-inline-size: 100%;
+}
+
+/* Header */
+header {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-block-start: 7vw;
+    margin-block-end: 1vw;
+    display: flex;
+    justify-content: space-between;
+    padding: 3vw;
+}
+
+.container_icon {
+    position: relative;
+}
+
+.count_products {
+    position: absolute;
+    inset-block-start: 55%;
+    inset-inline-end: 0;
+    background-color: #000;
+    color: #fff;
+    inline-size: 25px;
+    block-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+#contador_productos {
+    font-size: 1vw;
+}
+
+.container_cart_products {
+    position: absolute;
+    inset-block-start: 50px;
+    inset-inline-end: 0;
+    background-color: #fff;
+    inline-size: 400px;
+    z-index: 1;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.cart_product {
+    display: flex;          
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-block-end: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.info_cart_product {
+    display: flex;
+    justify-content: space-between;
+    flex: 0.8;
+}
+
+.titulo_producto_carrito {
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.precio_producto_carrito {
+    font-weight: 700;
+    font-size: 20px;
+    margin-inline-start: 10px;
+}
+
+.cantidad_producto_carrito {
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.icon_close {
+    inline-size: 25px;
+    block-size: 25px;
+}
+
+.icon_close:hover {
+    stroke: red;
+    cursor: pointer;
+}
+
+.cart_total {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    gap: 20px;
+}
+
+.cart_total h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.total_pagar {
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.hidden_cart {
+    display: none;
+}
+
+/* Main */
+.contenedor_items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.item {
+    border-radius: 10px;
+}
+
+.item:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.item img {
+    inline-size: 100%;
+    block-size: 300px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    transition: all 0.5s;
+}
+
+.item figure {
+    overflow: hidden;
+}
+
+
+.info_product {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 15px 30px;
+    line-height: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.info_product button {
+    border: none;
+    background: none;
+    background-color: #000;
+    color: #fff;
+    padding: 15px 10px;
+    cursor: pointer;
+}
+
+.cart_empty {
+    padding: 20px;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.btn_clear_all {
+    border: none;
+    background-color: #000;
+    color: #fff;
+    padding: 15px 0;
+    display: block;
+    inline-size: 100%;
+    margin-block-start: 10px;
+    border-end-start-radius: 10px;
+    border-end-end-radius: 10px;
+    font-family: inherit;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all .3s ease;
+}
+
+.btn_clear_all:hover {
+    background-color: #333;
+    transform: scale(1.03);
+    border-radius: 0;
+}
+
+/*----------------------------------------el footer*/
+.content {
+    text-align: center;
+    background-color: white;
+    inline-size: 100%;
+    padding: .1vw;
+    margin-block-start: 5vw;
+    border-block-start: .3vw solid;
+    border-image: linear-gradient(to right, #84b6f4, #ff6961) 1;
+
+    .lf {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: #ff6961;
+        font-size: 2vw;
+
+        h3 {
+            margin: 5px;
+        }
+    }
+
+    .iconos {
+        min-inline-size: 70vw;
+        display: flex;
+        justify-content: space-around;
+        margin-block-end: 5px;
+
+        a {
+            text-decoration: none;
+            color: #ff6961;
+            font-size: 2vw;
+            background-color: #84b6f4;
+            inline-size: 4vw;
+            block-size: 4vw;
+            line-height: 4vw;
+            border-radius: 5vw;
+            box-shadow: .5vw .5vw 2vw rgba(47, 28, 28, 0.5);
+        }
+    }
+}
