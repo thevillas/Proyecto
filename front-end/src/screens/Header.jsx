@@ -1,6 +1,6 @@
 import { useState } from 'react';
+import axios from 'axios'
 import styles from '../css/Styles.module.css'
-import Pasarela from './Pasarela';
 
 export const Header = ({
 	allProducts,
@@ -11,6 +11,15 @@ export const Header = ({
 	setTotal,
 }) => {
 	const [active, setActive] = useState(false);
+
+	const FuncionComprar = async (producto) => {
+		const response = await axios.post(
+		  "http://localhost:4000/Mercado_Pago",
+		  producto
+		);
+	
+		window.location.href = response.data;
+	  };
 
 	const onDeleteProduct = product => {
 		const results = allProducts.filter(
@@ -30,13 +39,11 @@ export const Header = ({
 
 	return (
 		<header>
-			<h1>Tienda</h1>
-
 			<div className={styles.container_icon}>
 				<div
 					className={styles.container_cart_icon}
 					onClick={() => setActive(!active)}
-				>
+					>
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
 						fill='none'
@@ -56,11 +63,7 @@ export const Header = ({
 					</div>
 				</div>
 
-				<div
-					className={`container-cart-products ${
-						active ? '' : 'hidden-cart'
-					}`}
-				>
+				<div className={`{styles.container_cart_products} ${active ? '' : 'hidden-cart'}`}  >
 					{allProducts ? (
 						<> 
 							<div className={styles.row_product}>
@@ -102,10 +105,10 @@ export const Header = ({
 							</div>
 
 							<button className={styles.btn_clear_all} onClick={onCleanCart}>
-								Vaciar Carrito
-								<a href="/pasarela">Ir a pagar</a>
+								Vaciar Carrito					
 							</button>
-							
+
+							<button onClick={FuncionComprar}>Ir a pagar</button>
 						</>
 					) : (
 						<p className={styles.cart_empty}>El carrito está vacío</p>
@@ -113,5 +116,5 @@ export const Header = ({
 				</div>
 			</div>
 		</header>
-	);
-};
+	)
+}

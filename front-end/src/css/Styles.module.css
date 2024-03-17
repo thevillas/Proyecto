@@ -100,14 +100,15 @@
 /*----------------------------------------la carta informativa*/
 .toast {
     transition-duration: 0.3s;
-    background-color: #6358dc75;
+    background-color: #812823;
     border-radius: 3vw;
     inline-size: 30%;
     text-align: center;
     position: absolute;
     inset-block-end: 0;
-    margin-block-end: 7vw;
-    padding: 5vw;
+    margin-block-end: 17vw;
+    padding: .5vw;
+    color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -197,6 +198,7 @@
         font-size: 1.4vw;
         background-color: rgba(69, 46, 46, .3);
         padding: .5vw;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
 
     h1 {
@@ -372,15 +374,13 @@
 
 .izquierda {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    display: flex;
-    margin-block-end: 0;
-    inline-size: 100%;
+    margin-block-end: 5vw;
     block-size: 25vw;
-    justify-content: space-between;
     align-items: center;
     margin-block-start: 0;
 
     .cortepelo {
+        margin-block-start: 0;
         block-size: 20vw;
         text-align: center;
         inline-size: 50%;
@@ -409,7 +409,7 @@
     }
 
     .cortebarbaypelo {
-        margin-block-start: 35vw;
+        margin-block-start: 65vw;
         block-size: 20vw;
         text-align: center;
         inline-size: 50%;
@@ -439,36 +439,31 @@
 }
 
 .derecha {
-    margin-inline-end: 10vw;
-    margin-block-start: 9vw;
-    margin-block-end: 20vw;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    display: flex;
-    block-size: 25vw;
-    justify-content: space-between;
+    margin-block-end: 5vw;
+    block-size: 120vw;
     align-items: center;
-
-
+    margin-block-start: 0;
 
     .cortebarba {
+        margin-block-start: 0;
+        block-size: 20vw;
         text-align: center;
-        inline-size: 10%;
-        margin-block-start: 9vw;
+        inline-size: 50%;
         color: black;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
         h3 {
-            margin-inline-start: 80vw;
+            margin-inline-start: 75vw;
             font-size: 3vw;
         }
 
         p {
             font-size: 2vw;
             inline-size: 40vw;
-            margin-inline-end: 70vw;
-            margin-inline-start: 60vw;
-        }
-
+            margin-inline-start: 58vw;
+        }       
+        
         img {
             inline-size: 30vw;
             block-size: 20vw;
@@ -477,24 +472,23 @@
     }
 
     .cortenormal {
-        margin-block-start: 35vw;
+        margin-block-start: 85vw;
+        block-size: 20vw;
         text-align: center;
-        inline-size: 10%;
+        inline-size: 50%;
         color: black;
-        margin-block-end: 20vw;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
         h3 {
             margin-block-start: -30vw;
-            margin-inline-start: 80vw;
+            margin-inline-start: 75vw;
             font-size: 3vw;
         }
 
         p {
             font-size: 2vw;
             inline-size: 40vw;
-            margin-inline-end: 70vw;
-            margin-inline-start: 60vw;
+            margin-inline-start: 58vw;
         }
 
         img {
@@ -522,33 +516,47 @@
     img {
         inline-size: 50vw;
         block-size: 30vw;
+        margin-inline-end: 5vw;
         margin-inline-start: 2vw;
         border-radius: 2vw;
     }
 
-    .inputs {
-        inline-size: 10vw;
-        block-size: 2vw;
-        margin-inline-start: 5vw;
-        font-size: 5vw;
+    .inputs{
+        color: white;
+        padding: 2vw;
+        border-radius: 1vw;
+        background: linear-gradient(to right, #F11712, #0099F7);
+        inline-size: 75vw;
 
-        input{
-            padding: .1vw;
-
-            #cajon2 {
-                margin: 10vw;
-                border: 30vw solid black;
-            }
+        .corte{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 1vw;
+            margin-block-end: 3vw;
         }
 
-            #cajon1 {
-                padding: 10vw;
-                margin: 2vw 2vw 2vw 2vw;
-            }
+        .meses{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 1vw;
+            margin-block-end: 3vw;
+        }
 
-            
+        .dia{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 1vw;
+            margin-block-end: 3vw;
+        }
 
-            #cajon3 {}
+        .hora{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 1vw;
+            margin-block-end: 3vw;
+        }
+
+        .min{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 1vw;
+            margin-block-end: 1vw;
+        }
     }
 
     button {
@@ -604,17 +612,6 @@
 }
 
 /*----------------------------------------los productos*/
-.icono {
-    margin-block-start: 2vw;
-    inline-size: 5vw;
-    float: inline-end;
-
-    a {
-        font-size: 3vw;
-        color: #ffbf00;
-    }
-}
-
 .product{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
@@ -628,16 +625,15 @@
 
 .recomendados_productos {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin: 8vw 5vw 0 6vw;
+    margin: 15vw 5vw 10vw 6vw;
     overflow: hidden;
 
     h2 {
         font-size: 5vw;
         text-align: center;
         color: #ff6961;
-        margin: 0 0 1vw 0;
+        margin: 0 0 5vw 0;
     }
-
 
     ul {
         margin: 0;
@@ -694,17 +690,23 @@
     }
 }
 
+/*----------------------------------------el productList*/
+.contenedor_items{
+
+        .button{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 2vw;
+            background: linear-gradient(to right, #F11712, #0099F7);
+            color: white;
+            border-radius: .5vw;
+        }
+
+        .item{
+            border-radius: .5vw;
+        }
+}
+
 /*----------------------------------------el header*/
-.icon_cart {
-    inline-size: 40px;
-    block-size: 40px;
-    stroke: #000;
-}
-
-.icon_cart:hover {
-    cursor: pointer;
-}
-
 img {
     max-inline-size: 100%;
 }
@@ -713,24 +715,31 @@ img {
 header {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin-block-start: 7vw;
-    margin-block-end: 1vw;
-    display: flex;
-    justify-content: space-between;
+    margin-block-end: 0;
     padding: 3vw;
 }
 
 .container_icon {
-    position: relative;
+    float: inline-end;
+}
+
+.icon_cart {
+    inline-size: 4vw;
+    block-size: 4vw;
+    stroke: #000;
+}
+
+.icon_cart:hover {
+    cursor: pointer;
 }
 
 .count_products {
-    position: absolute;
     inset-block-start: 55%;
     inset-inline-end: 0;
-    background-color: #000;
-    color: #fff;
-    inline-size: 25px;
-    block-size: 25px;
+    background-color: #ff6961;
+    color: #84b6f4;
+    inline-size: 2.3vw;
+    block-size: 2.3vw;
     display: flex;
     justify-content: center;
     align-items: center;

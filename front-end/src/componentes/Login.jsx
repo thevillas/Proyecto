@@ -26,7 +26,7 @@ const Login = () => {
       };
       setLoading(true);
       await axios
-        .post("http://localhost:4000/log/login", Usuario)
+        .post("http://localhost:4000/login", Usuario)
         .then((res) => {
           const { data } = res;
           setMensaje(data.mensaje);
@@ -68,6 +68,7 @@ const Login = () => {
                 name="correo"
                 id="correo"
                 type="correo"
+                required
                 placeholder="correo..."
                 autoComplete="off"
               />
@@ -84,6 +85,7 @@ const Login = () => {
                 name="contraseña"
                 id="contraseña"
                 type="password"
+                required
                 placeholder="Contraseña..."
                 autoComplete="off"
               />

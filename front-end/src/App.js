@@ -1,14 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Register from "./componentes/Register";
 import Login from "./componentes/Login";
-// <<<<<<< HEAD
-
-import Add from "./componentes/adduser/Add";
-import Edit from "./componentes/updateuser/Edit";
-import User from "./componentes/getuser/User";
-// =======
 import styles from './css/App.module.css';
-// >>>>>>> meco/front
+
+import Add from "./componentes/crud/add";
+import User from "./componentes/crud/user";
+import update from "./componentes/crud/update";
 
 import Home from "./screens/Home";
 import Galeria from "./screens/Galeria";
@@ -24,10 +21,10 @@ const App = () => {
     <BrowserRouter> 
       <div className={styles.NavBar}>
         <Routes>
-
-          <Route path="/add"  element={<Add />} /> 
-          <Route path="/edit/:id"  element={<Edit/>} /> 
-          <Route path="/user"  element={<User />} /> 
+        
+        <Route path="/add" element={<Add/>}/>
+        <Route path="/user" element={<User/>}/>
+        <Route path="/edit/:id" element={<update/>}/>
 
           <Route path="/" element={<Home />} />
           <Route path="/galeria" element={<Galeria />} />
@@ -35,7 +32,6 @@ const App = () => {
           <Route path="/productos" element={<Productos />} />
           <Route path="/reservas" element={<Reservas />} />
           <Route path="/servicios" element={<Servicios />} />
-
         </Routes>
         </div>
         

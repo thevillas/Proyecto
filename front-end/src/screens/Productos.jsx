@@ -13,10 +13,6 @@ const Productos = () => {
     <NavBar />
     <Header />
     <div>
-    <div className={Styles.product}>
-        <h2>Nuestros productos</h2>    
-    </div>
-    <ProductList />
     <div className={Styles.recomendados_productos}>
         <h2>Productos recomendados</h2>
         <ul>
@@ -26,6 +22,10 @@ const Productos = () => {
             <li><img src={logo} alt=""/></li>
         </ul>
     </div>
+    <div className={Styles.product}>
+        <h2>Nuestros productos</h2>    
+    </div>
+    <ProductList />
     </div>
     <Footer />
     </>

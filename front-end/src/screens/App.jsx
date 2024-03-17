@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
-import ProductList from './ProductList'
-import Header from './Header';
+import { useState } from 'react'
+import {ProductList} from './ProductList'
+import {Header} from './Header';
 
 function App() {
+        
+
     const [allProducts, setAllProducts] = useState([]);
     const [total, setTotal] = useState(0);
     const [countProduct, setCountProduct] = useState(0);
 
-
-    const App = () => {
         return (
             <div>
                 <Header 
@@ -31,6 +31,6 @@ function App() {
             </div>
         )
     }
-}
+
 
 export default App

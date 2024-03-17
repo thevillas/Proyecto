@@ -11,7 +11,7 @@ const Register = () => {
     nombre: "",
 
     email: "",
-    
+    nombre: "", 
 
     contraseña: "",
     celular: "",
@@ -46,7 +46,7 @@ const Register = () => {
       };
       setLoading(true);
       await axios
-        .post("http://localhost:4000/log/register", Usuario)
+        .post("http://localhost:4000/register", Usuario)
         .then((res) => {
           const { data } = res;
           setMensaje(data.mensaje);
@@ -65,7 +65,6 @@ const Register = () => {
           setMensaje("Hubo un error");
           setTimeout(() => {
             setMensaje("");
-            navigate("/");
           }, 1500);
         });
 
@@ -106,6 +105,7 @@ const Register = () => {
                 name="correo"
                 id="correo"
                 type="correo"
+                required
                 placeholder="Correo..."
                 autoComplete="off"
               />
@@ -121,6 +121,7 @@ const Register = () => {
                 value={contraseña}
                 name="contraseña"
                 id="contraseña"
+                required
                 type="password"
                 placeholder="Contraseña..."
                 autoComplete="off"
@@ -136,11 +137,7 @@ const Register = () => {
                 value={celular}
                 name="celular"
                 id="celular"
-
                 type="text"
-
-                
-
                 placeholder="Celular..."
                 autoComplete="off"
               />

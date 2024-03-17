@@ -1,10 +1,10 @@
 import React from 'react'
 import NavBar from '../componentes/NavBar'
 import Styles from '../css/Styles.module.css'
-import Image from '../images/imagen.png'
-import ima from '../images/imagen.png'
-import image from '../images/imagen.png'
-import fot from '../images/imagen.png'
+import corte from '../images/corte.png'
+import barba from '../images/barba.png'
+import cejas from '../images/cejas.png'
+import barba_corte from '../images/barba_corte.png'
 import Footer from '../componentes/Footer'
 
 const Servicios = () => {
@@ -20,7 +20,12 @@ const Servicios = () => {
         <div className={Styles.cortepelo}>
           <h3>Corte pelo:</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, praesentium. Facilis perferendis minus, aut sequi vero ipsam, excepturi veniam iusto suscipit, explicabo eligendi fuga distinctio similique libero voluptatibus doloremque rerum.</p>
-          <img src={Image} alt="" />
+          <img src={corte} alt="" />
+        </div>
+        <div className={Styles.cortebarbaypelo}>
+          <h3>Corte barba y pelo:</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, praesentium. Facilis perferendis minus, aut sequi vero ipsam, excepturi veniam iusto suscipit, explicabo eligendi fuga distinctio similique libero voluptatibus doloremque rerum.</p>
+          <img src={barba_corte} alt="" />
         </div>
         </div>
 
@@ -28,23 +33,12 @@ const Servicios = () => {
         <div className={Styles.cortebarba}>
           <h3>Corte barba:</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, praesentium. Facilis perferendis minus, aut sequi vero ipsam, excepturi veniam iusto suscipit, explicabo eligendi fuga distinctio similique libero voluptatibus doloremque rerum.</p>
-          <img src={ima} alt="" />
+          <img src={barba} alt="" />
         </div>
-        </div>
-
-        <div className={Styles.izquierda}>
-        <div className={Styles.cortebarbaypelo}>
-          <h3>Corte barba y pelo:</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, praesentium. Facilis perferendis minus, aut sequi vero ipsam, excepturi veniam iusto suscipit, explicabo eligendi fuga distinctio similique libero voluptatibus doloremque rerum.</p>
-          <img src={image} alt="" />
-        </div>
-        </div>
-
-        <div className={Styles.derecha}>
         <div className={Styles.cortenormal}>
-          <h3>Corte normal:</h3>
+          <h3>Corte cejas:</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, praesentium. Facilis perferendis minus, aut sequi vero ipsam, excepturi veniam iusto suscipit, explicabo eligendi fuga distinctio similique libero voluptatibus doloremque rerum.</p>
-          <img src={fot} alt="" />
+          <img src={cejas} alt="" />
         </div>
         </div>
       <Footer />
