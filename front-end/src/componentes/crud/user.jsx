@@ -3,6 +3,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import "../crud/user.css";
 import { Link } from 'react-router-dom'
+import { isAdminOrmoderador } from './utils/admin.js';
 
 function User() {
     const [users, setUsers] = useState([]);
@@ -11,7 +12,9 @@ function User() {
   
       const fetchData = async()=>{
           const response = await axios.get("http://localhost:4000/api/getall/");
+          
           setUsers(response.data);
+
       }
   
       fetchData();
@@ -19,6 +22,11 @@ function User() {
     },[])
   
     const deleteUser = async(userId) =>{
+        if (!isAdminOrmoderador()) {
+            toast.error('No tienes permiso para realizar esta acción.', {position: 'top-right'});
+            return;
+        }
+
         await axios.delete(`http://localhost:4000/api/delete/${userId}`)
         .then((respones)=>{
           setUsers((prevUser)=> prevUser.filter((user)=> user._id !== userId))
@@ -31,7 +39,7 @@ function User() {
   
     return (
       <div className='userTable'>
-          <Link to={"/add"} className='addButton'>Add User</Link>
+          {isAdminOrmoderador() && <Link to={"/add"} className='addButton'>Add User</Link>}
           <table border={1} cellPadding={10} cellSpacing={0}>
               <thead>
                   <tr>
@@ -52,8 +60,8 @@ function User() {
                               <td>{user.celular}</td>
                               <td>{user.correo}</td>
                               <td className='actionButtons'>
-                                  <button onClick={()=> deleteUser(user._id)}><i className="fa-solid fa-trash"></i></button>
-                                  <Link to={`/edit/`+user._id}><i className="fa-solid fa-pen-to-square"></i></Link>
+                                  {isAdminOrmoderador() && <button onClick={()=> deleteUser(user._id)}><i className="fa-solid fa-trash"></i></button>}
+                                  {isAdminOrmoderador() && <Link to={`/edit/`+user._id}><i className="fa-solid fa-pen-to-square"></i></Link>}
                               </td>
                           </tr>
                           )

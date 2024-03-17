@@ -26,18 +26,20 @@ const Login = () => {
       };
       setLoading(true);
       await axios
-        .post("http://localhost:4000/login", Usuario)
+        .post("http://localhost:4000/log/login", Usuario, {
+          withCredentials: true, // Aquí es donde se configura axios para enviar cookies
+        })
         .then((res) => {
           const { data } = res;
           setMensaje(data.mensaje);
           setTimeout(() => {
             setMensaje("");
             setLoading(false);
-
-            navigate(`/home/:id`);
-
-            navigate(`/home/${data?.usuario.id}`);
-
+  
+            navigate(`/`);
+  
+            
+  
           }, 1500);
         })
         .catch((error) => {
