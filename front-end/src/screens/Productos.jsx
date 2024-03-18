@@ -3,8 +3,8 @@ import Styles from '../css/Styles.module.css'
 import Footer from '../componentes/Footer'
 import imagen from '../images/imagen.png'
 import logo from '../images/logo.png'
-import ProductList from './ProductList'
-import { Header } from './Header'
+import ProductList from './ProductList.jsx'
+import Header  from './Header.jsx'
 import NavBar from '../componentes/NavBar'
 
 const Productos = () => {

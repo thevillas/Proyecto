@@ -11,10 +11,12 @@ function User() {
     useEffect(()=>{
   
       const fetchData = async()=>{
-          const response = await axios.get("http://localhost:4000/api/getall/");
-          
-          setUsers(response.data);
-
+          try {
+              const response = await axios.get("http://localhost:4000/api/getall/");
+              setUsers(response.data);
+          } catch (error) {
+              console.error('Hubo un error al obtener los datos:', error);
+          }
       }
   
       fetchData();
@@ -27,14 +29,13 @@ function User() {
             return;
         }
 
-        await axios.delete(`http://localhost:4000/api/delete/${userId}`)
-        .then((respones)=>{
-          setUsers((prevUser)=> prevUser.filter((user)=> user._id !== userId))
-          toast.success(respones.data.msg, {position: 'top-right'})
-        })
-        .catch((error) =>{
-          console.log(error);
-        })
+        try {
+            const response = await axios.delete(`http://localhost:4000/api/delete/${userId}`)
+            setUsers((prevUser)=> prevUser.filter((user)=> user._id !== userId))
+            toast.success(response.data.msg, {position: 'top-right'})
+        } catch (error) {
+            console.error('Hubo un error al eliminar el usuario:', error);
+        }
     }
   
     return (

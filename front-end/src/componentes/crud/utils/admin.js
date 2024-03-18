@@ -1,8 +1,7 @@
-import Cookies from 'js-cookie';
 import { jwtDecode as jwt_decode } from 'jwt-decode';
 
 export const isAdminOrmoderador = () => {
-  const token = Cookies.get('token');
+  const token = localStorage.getItem('token');
 
   if (!token) {
     return false;

@@ -1,36 +1,36 @@
 import { useState } from 'react'
-import {ProductList} from './ProductList'
-import {Header} from './Header';
+import ProductList  from './ProductList.jsx'
+import Header  from './Header.jsx';
 
 function App() {
-        
+
 
     const [allProducts, setAllProducts] = useState([]);
     const [total, setTotal] = useState(0);
-    const [countProduct, setCountProduct] = useState(0);
+    const [countProducts, setCountProducts] = useState(0);
 
-        return (
-            <div>
-                <Header 
-                allProducts={allProducts} 
-                setAllProducts={setAllProducts} 
-                total={total} 
+    return (
+        <>
+            <Header
+                allProducts={allProducts}
+                setAllProducts={setAllProducts}
+                total={total}
                 setTotal={setTotal}
-                countProduct={countProduct}
-                setCountProduct={setCountProduct}
-                />
+                countProduct={countProducts}
+                setCountProduct={setCountProducts}
+            />
 
-                <ProductList 
-                allProducts={allProducts} 
-                setAllProducts={setAllProducts} 
-                total={total} 
+            <ProductList
+                allProducts={allProducts}
+                setAllProducts={setAllProducts}
+                total={total}
                 setTotal={setTotal}
-                countProduct={countProduct}
-                setCountProduct={setCountProduct} 
-                />
-            </div>
-        )
-    }
+                countProduct={countProducts}
+                setCountProduct={setCountProducts}
+            />
+        </>
+    )
+}
 
 
 export default App
