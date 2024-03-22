@@ -27,7 +27,7 @@ const Login = () => {
       setLoading(true);
       await axios
         .post("http://localhost:4000/log/login", Usuario, {
-          withCredentials: true, // Aquí es donde se configura axios para enviar cookies
+          withCredentials: true,
         })
         .then((res) => {
           const { data } = res;
@@ -38,9 +38,16 @@ const Login = () => {
   
             navigate(`/`);
   
-            
-  
           }, 1500);
+  
+          // Almacenar el token en el almacenamiento local
+          const cookie = document.cookie.split('; ').find(row => row.startsWith('token'));
+          if (cookie) {
+            const token = cookie.split('=')[1];
+            localStorage.setItem('token', token);
+          } else {
+            console.error('No se encontró la cookie del token');
+          }
         })
         .catch((error) => {
           console.error(error);
@@ -69,7 +76,7 @@ const Login = () => {
                 value={correo}
                 name="correo"
                 id="correo"
-                type="correo"
+                type="email"
                 required
                 placeholder="correo..."
                 autoComplete="off"
