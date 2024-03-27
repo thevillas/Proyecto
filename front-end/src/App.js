@@ -6,8 +6,9 @@ import styles from './css/App.module.css';
 import Add from "./componentes/crud/add";
 import User from "./componentes/crud/user";
 import Update from "./componentes/crud/update";
-import getProd from "./componentes/crud/product/getProd";
-
+import GetProd from "./componentes/crud/product/getProd";
+import AddProd from "./componentes/crud/product/addProd";
+import UpdateProduct from "./componentes/crud/product/updateProd";
 
 
 
@@ -19,17 +20,20 @@ import Reservas from "./screens/Reservas";
 import Servicios from "./screens/Servicios";
 
 
+//crud
 
 const App = () => {
   return (
     <BrowserRouter> 
       <div className={styles.NavBar}>
         <Routes>
-        //crud
         <Route path="/add" element={<Add/>}/>
         <Route path="/user" element={<User/>}/>
         <Route path="/edit/:id" element={<Update/>}/>
-        <Route path="/product/" element={<getProd/>}/>
+        <Route path="/prod" element={<GetProd/>}/>
+        <Route path="/addProd" element={<AddProd/>}/>
+        <Route path="/prod/:id" element={<UpdateProduct/>}/>
+        
 
 
           <Route path="/" element={<Home />} />

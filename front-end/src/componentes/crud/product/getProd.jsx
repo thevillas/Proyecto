@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios";
 import toast from "react-hot-toast";
-import "./addProd.css";
+import "../product/userProd.css";
 import { Link } from 'react-router-dom'
-import i
+import { isAdminOrmoderador } from '../utils/admin';
 
 function GetProd() {
   const [products, setProducts] = useState([]);
@@ -14,7 +14,7 @@ function GetProd() {
     const fetchData = async()=>{
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.get("http://localhost:4000/api/prod/products", {
+            const response = await axios.get("http://localhost:4000/prod/products", {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -37,7 +37,7 @@ function GetProd() {
 
       try {
           const token = localStorage.getItem('token');
-          const response = await axios.delete(`http://localhost:4000/api/prod/products/${productId}`, {
+          const response = await axios.delete(`http://localhost:4000/prod/products/${productId}`, {
               headers: {
                   'Authorization': `Bearer ${token}`
               }
@@ -51,7 +51,7 @@ function GetProd() {
 
   return (
     <div className='productTable'>
-        {isAdminOrmoderador() && <Link to={"/addproduct"} className='addButton'>Add Product</Link>}
+        {isAdminOrmoderador() && <Link to={"/addProd"} className='addButton'>Add Product</Link>}
         <table border={1} cellPadding={10} cellSpacing={0}>
             <thead>
                 <tr>
@@ -73,7 +73,7 @@ function GetProd() {
                             <td>{product.price}</td>
                             <td className='actionButtons'>
                                 {isAdminOrmoderador() && <button onClick={()=> deleteProduct(product._id)}><i className="fa-solid fa-trash"></i></button>}
-                                {isAdminOrmoderador() && <Link to={`/editproduct/`+product._id}><i className="fa-solid fa-pen-to-square"></i></Link>}
+                                {isAdminOrmoderador() && <Link to={`/prod/`+product._id}><i className="fa-solid fa-pen-to-square"></i></Link>}
                             </td>
                         </tr>
                         )

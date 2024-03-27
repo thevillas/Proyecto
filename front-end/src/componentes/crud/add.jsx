@@ -2,7 +2,7 @@ import toast from 'react-hot-toast';
 import axios from "axios";
 import { Link, useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
-import "../crud/add.css";
+import "./product/addProd.css"
 
 function Add() {
     
