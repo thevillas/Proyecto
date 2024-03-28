@@ -39,6 +39,7 @@ function AddProd() {
          navigate("/addProd")
       })
       .catch(error => console.log(error))
+      
     }
   
     return (

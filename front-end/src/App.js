@@ -10,6 +10,11 @@ import GetProd from "./componentes/crud/product/getProd";
 import AddProd from "./componentes/crud/product/addProd";
 import UpdateProduct from "./componentes/crud/product/updateProd";
 
+import GetImg from "./componentes/imagenes/GetImg";
+import AddImg from "./componentes/imagenes/AddImg";
+import UpdateImg from "./componentes/imagenes/updateImg";
+
+
 
 
 import Home from "./screens/Home";
@@ -30,10 +35,14 @@ const App = () => {
         <Route path="/add" element={<Add/>}/>
         <Route path="/user" element={<User/>}/>
         <Route path="/edit/:id" element={<Update/>}/>
+        
         <Route path="/prod" element={<GetProd/>}/>
         <Route path="/addProd" element={<AddProd/>}/>
         <Route path="/prod/:id" element={<UpdateProduct/>}/>
         
+        <Route path="/img" element={<GetImg/>}/>
+        <Route path="/addimg" element={<AddImg/>}/>
+        <Route path="/img/:id" element={<UpdateImg/>}/>
 
 
           <Route path="/" element={<Home />} />
